@@ -6,10 +6,10 @@
 
 using namespace std;
 #define MAXLENGTH 1000000
-#define HASHCAPACITY 67108864 //2^26
+#define HASHCAPACITY 1048576 //2^20
 int letterTable[MAXLENGTH][26];
 string reStrArr[MAXLENGTH];
-//time_t globalStart,globalEnd,hashStart,hashEnd,hashTime=0;;
+time_t globalStart,globalEnd,hashStart,hashEnd,hashTime=0;
 
 /*LinkedList for address hash collision */
 class LinkedNode {
@@ -43,17 +43,21 @@ public:
     int getLength() { return length; }
 
     bool find(string val) {
-//        hashStart=clock();
-
         LinkedNode *curr = head;
         for (int i = 0; i < length; ++i) {
             if (curr->str == val) return true;
             else curr = curr->next;
         }
-
-//        hashEnd=clock();
-//        hashTime+=hashEnd-hashStart;
         return false;
+    }
+
+    void printer(){
+        LinkedNode* temp=head;
+        for (int i = 0; i < length; ++i) {
+            cout<<temp->str<<"-";
+            temp=temp->next;
+        }
+        cout<<endl;
     }
 };
 
@@ -79,8 +83,8 @@ unsigned int hashMod(unsigned int n, unsigned int m){
 /*Hash every substring*/
 unsigned int hashString(string str) {
     unsigned int hash_value = 0;
-    for (int i = 1; i < str.length(); i*=2) {
-        hash_value = hashMod(12347 * hash_value + str[i-1],HASHCAPACITY);
+    for (int i = 0; i < str.length(); i++) {
+        hash_value = hashMod(12347 * hash_value + str[i],HASHCAPACITY);
     }
 
     return hash_value;
@@ -96,29 +100,31 @@ string generateRandomArray(int n, int rang) {
     return res;
 }
 
+//Create hashTable
 LinkedList hashTable[HASHCAPACITY];
+string hashTable2[HASHCAPACITY];
 
 int main() {
     /*Load data*/
     //Load data from manually input
-    int n,k;
-    cin>>n>>k;
-    string data;
-    cin>>data;
+//    int n,k;
+//    cin>>n>>k;
+//    string data;
+//    cin>>data;
 
 //    //Load data from certain testcase
 //    int n = 10, k = 1;
 //    string data = "ccccababab";
 
-//    //Load data from random generation
-//    srand(time(NULL));
-//    int n=rand()%(30000);
-//    srand(time(NULL));
-//    int k=rand()%n;
-//    string data= generateRandomArray(n,26);
-//    cout<<"n="<<n<<" k="<<k<<endl;
+    //Load data from random generation
+    srand(time(NULL));
+    int n=rand()%(100000);
+    srand(time(NULL));
+    int k=rand()%n;
+    string data= generateRandomArray(n,26);
+    cout<<"n="<<n<<" k="<<k<<endl;
 
-//    globalStart=clock();
+
 
     /*Convert each substring into a row in letterTable, using sliding window*/
     //Initialize the first row in letterTable
@@ -143,32 +149,53 @@ int main() {
     }
 
     //Hash
+    globalStart=clock();
     int res = 0;
+//    int hash_collision=0;
     for (int i = 0; i < n - k + 1; ++i) {
 
-
         unsigned int hashValue = hashString(reStrArr[i]);
-
 
         if (hashTable[hashValue].getLength() == 0) {
             hashTable[hashValue].pushFront(reStrArr[i]);
             res++;
         } else {
 
-            if (hashTable[hashValue].find(reStrArr[i])) continue;
+            if (hashTable[hashValue].find(reStrArr[i])) {
+//                hash_collision++;
+                continue;
+            }
             else{
-
                 hashTable[hashValue].pushFront(reStrArr[i]);
                 res++;
             }
-
         }
     }
+    globalEnd=clock();
+
+    hashStart=clock();
+    int final=0;
+    for (int i = 0; i < n - k + 1; ++i) {
+        unsigned int hashValue=hashString(reStrArr[i]);
+        while (hashTable2[hashValue]!=reStrArr[i]){
+            if (hashTable2[hashValue].empty()){
+                hashTable2[hashValue]=reStrArr[i];
+                final++;
+            } else {
+                hashValue++;
+                if (hashValue==HASHCAPACITY){
+                    hashValue=0;
+                }
+            }
+        }
+    }
+    hashEnd=clock();
 
     cout<<res<<endl;
-//    globalEnd=clock();
-//    cout<<"HashTime Consume: "<<1000*hashTime/(double ) CLOCKS_PER_SEC<<" ms"<<endl;
-//    cout<<"Time Consume: "<<1000*(globalEnd-globalStart)/(double ) CLOCKS_PER_SEC<<" ms"<<endl;
+    cout<<final<<endl;
+//    cout<<"collision: "<<hash_collision<<endl;
+    cout<<"Time1 Consume: "<<1000*(hashEnd-hashStart)/(double ) CLOCKS_PER_SEC<<" ms"<<endl;
+    cout<<"Time2 Consume: "<<1000*(globalEnd-globalStart)/(double ) CLOCKS_PER_SEC<<" ms"<<endl;
     return 0;
 }
 
