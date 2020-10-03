@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cs101_hw1.dir/question3_true.cpp.o  -o cs101_hw1 
