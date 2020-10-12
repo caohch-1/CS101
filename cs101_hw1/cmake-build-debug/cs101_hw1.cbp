@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3_true.cpp">
+		<Unit filename="/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3.cpp">
 			<Option target="cs101_hw1"/>
 		</Unit>
 		<Unit filename="/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/CMakeLists.txt">

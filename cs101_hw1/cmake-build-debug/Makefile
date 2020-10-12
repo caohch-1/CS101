@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/cmake-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -143,32 +143,32 @@ cs101_hw1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/build
 .PHONY : cs101_hw1/fast
 
-question3_true.o: question3_true.cpp.o
+question3.o: question3.cpp.o
 
-.PHONY : question3_true.o
+.PHONY : question3.o
 
 # target to build an object file
-question3_true.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/question3_true.cpp.o
-.PHONY : question3_true.cpp.o
+question3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/question3.cpp.o
+.PHONY : question3.cpp.o
 
-question3_true.i: question3_true.cpp.i
+question3.i: question3.cpp.i
 
-.PHONY : question3_true.i
+.PHONY : question3.i
 
 # target to preprocess a source file
-question3_true.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/question3_true.cpp.i
-.PHONY : question3_true.cpp.i
+question3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/question3.cpp.i
+.PHONY : question3.cpp.i
 
-question3_true.s: question3_true.cpp.s
+question3.s: question3.cpp.s
 
-.PHONY : question3_true.s
+.PHONY : question3.s
 
 # target to generate assembly for a file
-question3_true.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/question3_true.cpp.s
-.PHONY : question3_true.cpp.s
+question3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs101_hw1.dir/build.make CMakeFiles/cs101_hw1.dir/question3.cpp.s
+.PHONY : question3.cpp.s
 
 # Help Target
 help:
@@ -179,9 +179,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cs101_hw1"
-	@echo "... question3_true.o"
-	@echo "... question3_true.i"
-	@echo "... question3_true.s"
+	@echo "... question3.o"
+	@echo "... question3.i"
+	@echo "... question3.s"
 .PHONY : help
 
 

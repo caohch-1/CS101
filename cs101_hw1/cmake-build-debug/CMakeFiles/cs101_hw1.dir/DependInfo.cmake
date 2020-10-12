@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3_true.cpp" "/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/cmake-build-debug/CMakeFiles/cs101_hw1.dir/question3_true.cpp.o"
+  "/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3.cpp" "/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/cmake-build-debug/CMakeFiles/cs101_hw1.dir/question3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

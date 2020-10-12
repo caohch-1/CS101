@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/caohch1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -77,27 +77,27 @@ include CMakeFiles/cs101_hw1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cs101_hw1.dir/flags.make
 
-CMakeFiles/cs101_hw1.dir/question3_true.cpp.o: CMakeFiles/cs101_hw1.dir/flags.make
-CMakeFiles/cs101_hw1.dir/question3_true.cpp.o: ../question3_true.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cs101_hw1.dir/question3_true.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cs101_hw1.dir/question3_true.cpp.o -c /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3_true.cpp
+CMakeFiles/cs101_hw1.dir/question3.cpp.o: CMakeFiles/cs101_hw1.dir/flags.make
+CMakeFiles/cs101_hw1.dir/question3.cpp.o: ../question3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cs101_hw1.dir/question3.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cs101_hw1.dir/question3.cpp.o -c /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3.cpp
 
-CMakeFiles/cs101_hw1.dir/question3_true.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs101_hw1.dir/question3_true.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3_true.cpp > CMakeFiles/cs101_hw1.dir/question3_true.cpp.i
+CMakeFiles/cs101_hw1.dir/question3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs101_hw1.dir/question3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3.cpp > CMakeFiles/cs101_hw1.dir/question3.cpp.i
 
-CMakeFiles/cs101_hw1.dir/question3_true.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs101_hw1.dir/question3_true.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3_true.cpp -o CMakeFiles/cs101_hw1.dir/question3_true.cpp.s
+CMakeFiles/cs101_hw1.dir/question3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs101_hw1.dir/question3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/question3.cpp -o CMakeFiles/cs101_hw1.dir/question3.cpp.s
 
 # Object files for target cs101_hw1
 cs101_hw1_OBJECTS = \
-"CMakeFiles/cs101_hw1.dir/question3_true.cpp.o"
+"CMakeFiles/cs101_hw1.dir/question3.cpp.o"
 
 # External object files for target cs101_hw1
 cs101_hw1_EXTERNAL_OBJECTS =
 
-cs101_hw1: CMakeFiles/cs101_hw1.dir/question3_true.cpp.o
+cs101_hw1: CMakeFiles/cs101_hw1.dir/question3.cpp.o
 cs101_hw1: CMakeFiles/cs101_hw1.dir/build.make
 cs101_hw1: CMakeFiles/cs101_hw1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caohch1/JetBrainProjects/CLionProjects/cs101_hw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cs101_hw1"

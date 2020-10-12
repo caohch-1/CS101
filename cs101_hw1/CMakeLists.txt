@@ -3,4 +3,4 @@ project(cs101_hw1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(cs101_hw1 question3_true.cpp)
+add_executable(cs101_hw1 question3.cpp)
