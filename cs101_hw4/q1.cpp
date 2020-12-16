@@ -1,98 +1,119 @@
-//
-// Created by MissSirius on 2020/12/7.
-//
-
 #include <iostream>
+
 using namespace std;
-const int N = 25005;
-const int M = 500;
-const int WEIGHT = 20005;
-int dis[N];
-bool visited[N];
-
-class Queue
-{
-public:
-    int data[N*M];
-    int head = 0;
-    int tail = 0;
-
-    void push(int key) {
-        data[tail++] = key;
-    }
-
-    int pop() {
-        return data[head++];
-    }
-
-    bool empty() const {
-        return head == tail;
-    }
-};
+const int MK = 50000;
+const int V = 25000;
+const int MAX_WEIGHT = 20000;
 
 struct Edge {
-    int end = 0;
-    int weight = 0;
+    int start = 0, end = 0, weight = 0;
 };
 
-struct Vertice {
-    Edge edges[M];
-    int deg = 0;
-} graph[N];
 
-void spfa(int S, int V, Vertice* graph)
-{
-    for (int i = 0; i <= V; i++) {
-        dis[i] = WEIGHT;
+class Graph {
+public:
+    Edge edges[MK];
+    int E_num = 0;
+    int V_num = 0;
+    int dis_matrix[100][100];
+    int dis[V]{};
+
+    void set_v(int v) {
+        this->V_num = v;
+//        dis_matrix = new int* [V_num + 1];
+//        for (int i = 0; i < V_num + 1; ++i) {
+//            dis_matrix[i] = new int [V_num];
+//        }
+        for (int i = 1; i <= V_num; ++i) {
+            for (int j = 1; j <= V_num; ++j) {
+                dis_matrix[i][j] = MAX_WEIGHT;
+            }
+        }
+        for (int i = 1; i <= V_num; ++i) {
+            dis_matrix[i][i] = 0;
+        }
     }
-    dis[S] = 0;
 
-    Queue q;
-    q.push(S);
-    visited[S] = true;
+    void add_single_edge(int s, int e, int w) {
+        edges[E_num].start = s;
+        edges[E_num].end = e;
+        edges[E_num++].weight = w;
+        dis_matrix[s][e] = w;
+    }
 
-    while (!q.empty()) {
-        int curr = q.pop();
-        visited[curr] = false;
+    void add_double_edge(int s, int e, int w) {
+        add_single_edge(s, e, w);
+        add_single_edge(e, s, w);
+    }
 
-        for (int i = 0; i < graph[curr].deg; i++) {
-            int vertice = graph[curr].edges[i].end;
-            int weight = graph[curr].edges[i].weight;
+    void bellman_ford(int s) {
+        for (int i = 1; i <= V_num; ++i) {
+            dis[i] = MAX_WEIGHT;
+        }
+        dis[s] = 0;
 
-            if (dis[vertice] > dis[curr] + weight) {
-                dis[vertice] = dis[curr] + weight;
-                if (!visited[vertice]) q.push(vertice), visited[vertice] = true;
+        for (int i = 0; i < V_num - 1; ++i) {
+            for (int j = 0; j < E_num; ++j) {
+                int p1 = edges[j].start;
+                int p2 = edges[j].end;
+                int w = edges[j].weight;
+
+                if (dis[p1] != MAX_WEIGHT && dis[p1] + w < dis[p2]) dis[p2] = dis[p1] + w;
             }
         }
     }
-}
+
+    void floyd_warshall() {
+        for (int k = 1; k <= V_num; ++k) {
+            for (int i = 1; i <= V_num; ++i) {
+                for (int j = 1; j <= V_num; ++j) {
+                    if (dis_matrix[i][k] != MAX_WEIGHT && dis_matrix[k][j] != MAX_WEIGHT &&
+                        dis_matrix[i][k] + dis_matrix[k][j] < dis_matrix[i][j])
+                        dis_matrix[i][j] = dis_matrix[i][k] + dis_matrix[k][j];
+                }
+            }
+        }
+    }
+};
 
 
-int main()
-{
+int main() {
+    Graph test;
     int n, m, k, s;
     scanf("%d%d%d%d", &n, &m, &k, &s);
+    test.set_v(n);
     for (int i = 0; i < m; ++i) {
         int p1, p2, w;
         scanf("%d%d%d", &p1, &p2, &w);
-        graph[p1].edges[graph[p1].deg].end = p2;
-        graph[p2].edges[graph[p2].deg].end = p1;
-        graph[p1].edges[graph[p1].deg].weight = w;
-        graph[p2].edges[graph[p2].deg].weight = w;
-        graph[p1].deg ++;
-        graph[p2].deg ++;
+        test.add_double_edge(p1, p2, w);
     }
+
     for (int i = 0; i < k; ++i) {
         int p1, p2, w;
         scanf("%d%d%d", &p1, &p2, &w);
-        graph[p1].edges[graph[p1].deg].end = p2;
-        graph[p1].edges[graph[p1].deg].weight = w;
-        graph[p1].deg ++;
+        test.add_single_edge(p1, p2, w);
     }
-    spfa(s, n, graph);
-    for (int i = 1; i <= n; ++i) {
-        if (dis[i] != WEIGHT) printf("%d\n", dis[i]);
-        else cout<<"UNREACHABLE\n";
+
+    test.floyd_warshall();
+
+//    for (int i = 1; i <= test.V_num; ++i) {
+//        for (int j = 1; j <= test.V_num; ++j) {
+//            cout << dis_matrix[i][j] << " ";
+//        }
+//        cout << endl;
+//    }
+
+    for (int i = 1; i <= test.V_num; ++i) {
+        if (test.dis_matrix[s][i] == MAX_WEIGHT) printf("UNREACHABLE\n");
+        else printf("%d\n", test.dis_matrix[s][i]);
     }
+
+//    test.bellman_ford(s);
+//
+//    for (int i = 1; i <= test.V_num; ++i) {
+//        if (test.dis[i] == MAX_WEIGHT) printf("UNREACHABLE\n");
+//        else printf("%d\n", test.dis[i]);
+//    }
+
     return 0;
 }

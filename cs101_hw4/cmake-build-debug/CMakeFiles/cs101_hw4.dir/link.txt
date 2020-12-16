@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/cs101_hw4.dir/q2.cpp.o  -o cs101_hw4 
+/usr/bin/c++  -g   CMakeFiles/cs101_hw4.dir/q1.cpp.o  -o cs101_hw4 
