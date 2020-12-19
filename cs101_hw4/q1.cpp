@@ -5,8 +5,9 @@ using namespace std;
 const int N = 25005;
 const int M = 50005;
 const int K = 50005;
-const int MAX_WEIGHT = 20000;
+const int MAX_WEIGHT = 999999999;
 
+/*I need STL !!!*/
 struct Pair {
     int first;
     int second;
@@ -33,12 +34,15 @@ inline Pair make_Pair(int x, int y) {
     return res;
 }
 
+Pair data[M + K];
+
 class Priority_queue {
 private:
-    Pair data[M + K];
     int size = 0;
 
     void MIN_HEAPIFY(int i) {
+        if (i == 0) return;
+
         int l = 2 * i;
         int r = 2 * i + 1;
         int min;
@@ -54,6 +58,7 @@ private:
             swap(data[i], data[min]);
             MIN_HEAPIFY(min);
         }
+
     }
 
     void HEAP_DECREASE_KEY(int i, Pair key) {
@@ -69,11 +74,11 @@ public:
         Pair min = data[1];
         data[1] = data[size];
         size--;
-        MIN_HEAPIFY(1);
+        if (size != 0) MIN_HEAPIFY(1);
         return min;
     }
 
-    Pair top() {
+    static Pair top() {
         return data[1];
     }
 
@@ -89,7 +94,7 @@ public:
 
 class Queue {
 private:
-    int data[M + K];
+    int data[M + K]{};
     int head = 0;
     int tail = 0;
 public:
@@ -145,20 +150,20 @@ public:
     }
 };
 
-struct Node_list {
+struct Node_pair {
     Pair key;
-    Node_list *next;
+    Node_pair *next;
 
-    explicit Node_list(Pair k, Node_list *n = nullptr) : key(k), next(n) {}
+    explicit Node_pair(Pair k, Node_pair *n = nullptr) : key(k), next(n) {}
 };
 
 class Linked_list_pair {
 private:
-    Node_list *head;
-    Node_list *tail;
+    Node_pair *head;
+    Node_pair *tail;
 public:
     Linked_list_pair() {
-        Node_list *root = new Node_list(make_Pair(-1, -MAX_WEIGHT));
+        Node_pair *root = new Node_pair(make_Pair(-1, -MAX_WEIGHT));
         head = root;
         tail = root;
     }
@@ -168,14 +173,14 @@ public:
             head->key = x;
             return;
         }
-        Node_list *temp = new Node_list(x);
+        Node_pair *temp = new Node_pair(x);
 
         tail->next = temp;
         tail = temp;
 
     }
 
-    Node_list *begin() {
+    Node_pair *begin() {
         return head;
     }
 };
@@ -184,17 +189,17 @@ Linked_list_pair positive_edges[M];
 Linked_list_pair negative_edges[K];
 Linked_list_int connected_components[N];
 
+/*main part*/
 int in_which_connected_component[N];
 int connected_component_deg[N];
 bool visited[N];
-
 
 inline void dfs(int s, int connected_component) {
     if (s == -1) return;
 
     in_which_connected_component[s] = connected_component;
     connected_components[connected_component].push(s);
-    Node_list *curr = positive_edges[s].begin();
+    Node_pair *curr = positive_edges[s].begin();
     while (curr != nullptr) {
         if (!in_which_connected_component[curr->key.first]) dfs(curr->key.first, connected_component);
         curr = curr->next;
@@ -211,7 +216,7 @@ void get_components(int n) {
 
 void get_component_deg(int n) {
     for (int i = 1; i <= n; ++i) {
-        Node_list *curr = negative_edges[i].begin();
+        Node_pair *curr = negative_edges[i].begin();
         while (curr != nullptr) {
             connected_component_deg[in_which_connected_component[curr->key.first]]++;
             curr = curr->next;
@@ -224,6 +229,7 @@ int dis[N];
 void top_dij(int n, int s) {
     for (int i = 1; i <= n; ++i) {
         dis[i] = MAX_WEIGHT;
+        visited[i] = false;
     }
     dis[s] = 0;
 
@@ -259,7 +265,7 @@ void top_dij(int n, int s) {
             } else visited[temp_edge.second] = true;
 
 
-            Node_list *curr2 = positive_edges[temp_edge.second].begin();
+            Node_pair *curr2 = positive_edges[temp_edge.second].begin();
             while (curr2 != nullptr) {
                 if (curr2->key.first != -1 && dis[temp_edge.second] + curr2->key.second < dis[curr2->key.first]) {
                     dis[curr2->key.first] = dis[temp_edge.second] + curr2->key.second;
@@ -269,7 +275,7 @@ void top_dij(int n, int s) {
             }
 
 
-            Node_list *curr3 = negative_edges[temp_edge.second].begin();
+            Node_pair *curr3 = negative_edges[temp_edge.second].begin();
             while (curr3 != nullptr) {
                 if (dis[temp_edge.second] + curr3->key.second < dis[curr3->key.first]) {
                     dis[curr3->key.first] = dis[temp_edge.second] + curr3->key.second;
@@ -281,10 +287,11 @@ void top_dij(int n, int s) {
         //judge deg for top_sort
         Node_int *curr4 = connected_components[component_index].begin();
         while (curr4 != nullptr) {
-            Node_list *curr5 = negative_edges[curr4->key].begin();
+            Node_pair *curr5 = negative_edges[curr4->key].begin();
             while (curr5 != nullptr) {
-                if (!--connected_component_deg[in_which_connected_component[curr5->key.first]]) {
-                    if (curr5->key.first != -1) component_queue.push(in_which_connected_component[curr5->key.first]);
+                if (curr5->key.first != -1 &&
+                    !--connected_component_deg[in_which_connected_component[curr5->key.first]]) {
+                    component_queue.push(in_which_connected_component[curr5->key.first]);
                 }
                 curr5 = curr5->next;
             }
@@ -292,7 +299,6 @@ void top_dij(int n, int s) {
         }
     }
 }
-
 
 int main() {
     int n, m, k, s;
@@ -319,9 +325,9 @@ int main() {
 
     for (int i = 1; i <= n; i++)
         if (dis[i] == MAX_WEIGHT)
-            cout << "UNREACHABLE\n";
+            printf("UNREACHABLE\n");
         else
-            cout << dis[i] << endl;
+            printf("%d\n", dis[i]);
 
     return 0;
 }

@@ -57,27 +57,27 @@ include CMakeFiles/cs101_hw4.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cs101_hw4.dir/flags.make
 
-CMakeFiles/cs101_hw4.dir/q3.cpp.o: CMakeFiles/cs101_hw4.dir/flags.make
-CMakeFiles/cs101_hw4.dir/q3.cpp.o: ../q3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Project/CLionProjects/CS101/cs101_hw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cs101_hw4.dir/q3.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cs101_hw4.dir/q3.cpp.o -c /mnt/d/Project/CLionProjects/CS101/cs101_hw4/q3.cpp
+CMakeFiles/cs101_hw4.dir/q1.cpp.o: CMakeFiles/cs101_hw4.dir/flags.make
+CMakeFiles/cs101_hw4.dir/q1.cpp.o: ../q1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Project/CLionProjects/CS101/cs101_hw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cs101_hw4.dir/q1.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cs101_hw4.dir/q1.cpp.o -c /mnt/d/Project/CLionProjects/CS101/cs101_hw4/q1.cpp
 
-CMakeFiles/cs101_hw4.dir/q3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs101_hw4.dir/q3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Project/CLionProjects/CS101/cs101_hw4/q3.cpp > CMakeFiles/cs101_hw4.dir/q3.cpp.i
+CMakeFiles/cs101_hw4.dir/q1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs101_hw4.dir/q1.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Project/CLionProjects/CS101/cs101_hw4/q1.cpp > CMakeFiles/cs101_hw4.dir/q1.cpp.i
 
-CMakeFiles/cs101_hw4.dir/q3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs101_hw4.dir/q3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Project/CLionProjects/CS101/cs101_hw4/q3.cpp -o CMakeFiles/cs101_hw4.dir/q3.cpp.s
+CMakeFiles/cs101_hw4.dir/q1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs101_hw4.dir/q1.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Project/CLionProjects/CS101/cs101_hw4/q1.cpp -o CMakeFiles/cs101_hw4.dir/q1.cpp.s
 
 # Object files for target cs101_hw4
 cs101_hw4_OBJECTS = \
-"CMakeFiles/cs101_hw4.dir/q3.cpp.o"
+"CMakeFiles/cs101_hw4.dir/q1.cpp.o"
 
 # External object files for target cs101_hw4
 cs101_hw4_EXTERNAL_OBJECTS =
 
-cs101_hw4: CMakeFiles/cs101_hw4.dir/q3.cpp.o
+cs101_hw4: CMakeFiles/cs101_hw4.dir/q1.cpp.o
 cs101_hw4: CMakeFiles/cs101_hw4.dir/build.make
 cs101_hw4: CMakeFiles/cs101_hw4.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Project/CLionProjects/CS101/cs101_hw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cs101_hw4"

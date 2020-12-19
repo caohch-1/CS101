@@ -123,32 +123,32 @@ cs101_hw4/fast:
 	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/build
 .PHONY : cs101_hw4/fast
 
-q3.o: q3.cpp.o
+q1.o: q1.cpp.o
 
-.PHONY : q3.o
+.PHONY : q1.o
 
 # target to build an object file
-q3.cpp.o:
-	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/q3.cpp.o
-.PHONY : q3.cpp.o
+q1.cpp.o:
+	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/q1.cpp.o
+.PHONY : q1.cpp.o
 
-q3.i: q3.cpp.i
+q1.i: q1.cpp.i
 
-.PHONY : q3.i
+.PHONY : q1.i
 
 # target to preprocess a source file
-q3.cpp.i:
-	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/q3.cpp.i
-.PHONY : q3.cpp.i
+q1.cpp.i:
+	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/q1.cpp.i
+.PHONY : q1.cpp.i
 
-q3.s: q3.cpp.s
+q1.s: q1.cpp.s
 
-.PHONY : q3.s
+.PHONY : q1.s
 
 # target to generate assembly for a file
-q3.cpp.s:
-	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/q3.cpp.s
-.PHONY : q3.cpp.s
+q1.cpp.s:
+	$(MAKE) -f CMakeFiles/cs101_hw4.dir/build.make CMakeFiles/cs101_hw4.dir/q1.cpp.s
+.PHONY : q1.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cs101_hw4"
-	@echo "... q3.o"
-	@echo "... q3.i"
-	@echo "... q3.s"
+	@echo "... q1.o"
+	@echo "... q1.i"
+	@echo "... q1.s"
 .PHONY : help
 
 

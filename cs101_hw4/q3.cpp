@@ -14,7 +14,7 @@ int travel_order[N][N];
 
 int costs[N];
 
-void tsp_sub(int s, int n, bool *visit, int &cost, int &last, int &ctr, int start) {
+void tsp_greedy_sub(int s, int n, bool *visit, int &cost, int &last, int &ctr, int start) {
     travel_order[start][ctr] = s;
 
     visit[s] = true;
@@ -31,10 +31,10 @@ void tsp_sub(int s, int n, bool *visit, int &cost, int &last, int &ctr, int star
 
     visit[next_vertice] = true, cost += next_cost;
 
-    tsp_sub(next_vertice, n, visit, cost, last, ++ctr, start);
+    tsp_greedy_sub(next_vertice, n, visit, cost, last, ++ctr, start);
 }
 
-void tsp(int n) {
+void tsp_greedy(int n) {
     for (int i = 1; i <= n; ++i) {
         bool vis[n + 5];
         for (int j = 1; j <= n; ++j) {
@@ -44,7 +44,7 @@ void tsp(int n) {
         int cost = 0;
         int last;
         int ctr = 0;
-        tsp_sub(i, n, vis, cost, last, ctr, i);
+        tsp_greedy_sub(i, n, vis, cost, last, ctr, i);
 
         costs[i] = cost + dist[i][last];
     }
@@ -67,7 +67,7 @@ int main() {
         }
     }
 
-    tsp(n);
+    tsp_greedy(n);
 
     int min_cost = 5000000;
     int min_start;
@@ -80,6 +80,3 @@ int main() {
     }
     return 0;
 }
-
-
-
