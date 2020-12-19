@@ -3,4 +3,4 @@ project(cs101_hw4)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(cs101_hw4 q1.cpp)
+add_executable(cs101_hw4 q3.cpp)
