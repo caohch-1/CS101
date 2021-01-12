@@ -11,25 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b79af676-598e-46d1-81e1-521d0b3c5ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cs101_hw4/generate.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cs101_hw4/xxb.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/CMakeFiles/cs101_hw4.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/cs101_hw4" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/cs101_hw4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/cs101_hw4.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/cmake-build-debug/cs101_hw4.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/q1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/q1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs101_hw4/q3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cs101_hw4/q3.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="b79af676-598e-46d1-81e1-521d0b3c5ad0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +92,7 @@
       <workItem from="1608385876657" duration="515000" />
       <workItem from="1608386474156" duration="6377000" />
       <workItem from="1608398087067" duration="10605000" />
-      <workItem from="1608408852052" duration="240000" />
+      <workItem from="1608408852052" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="greedy-for-q3">
       <created>1608388891598</created>
@@ -119,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608388891598</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="final">
+      <created>1608409191834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608409191834</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +116,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="greedy-for-q3" />
-    <option name="LAST_COMMIT_MESSAGE" value="greedy-for-q3" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
